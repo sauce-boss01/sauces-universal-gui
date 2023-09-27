@@ -182,7 +182,7 @@ end
    -------------------------------------
         Tabs.Anim:AddButton({
         Title = "Nullware V3",
-        Description = "Some animations",
+        Description = "Some more animations",
         Callback = function()
          getgenv().Theme = "Blue" -- To change the UI Theme, set this to one of the following options: "Red", "Purple", "Blue", "Green", "Yellow"
 local LocalPlayer = game:GetService("Players").LocalPlayer
