@@ -1,0 +1,277 @@
+local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
+local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
+local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
+
+local Window = Fluent:CreateWindow({
+Title = "sauce's universal gui v0.2",
+    SubTitle = "(i didnt know what name to put so i just put that shit)",
+    TabWidth = 160,
+    Size = UDim2.fromOffset(580, 460),
+    Acrylic = true, --The blur may be detectable, setting this to false disables this setting completley need high graphics
+    Theme = "Dark",
+    MinimizeKey = Enum.KeyCode.H
+    })
+    
+    local Tabs = {
+    Main = Window:AddTab({ Title = "Utility", Icon = "globe" }),
+    Misc = Window:AddTab({ Title = "Misc", Icon = "code-2" }),
+    Anim = Window:AddTab({ Title = "Animations", Icon = "person-standing" }),
+    Hubs = Window:AddTab({ Title = "Hubs", Icon = "focus" }),
+    User = Window:AddTab({ Title = "Character", Icon = "user" }),
+    
+    Settings = Window:AddTab({ Title = "Settings", Icon = "settings" })
+}
+
+local Options = Fluent.Options
+
+do
+    Fluent:Notify({
+        Title = "Notification",
+        Content = "loaded succesfully",
+        SubContent = "H to toggle",
+        Duration = 5
+    })
+    
+    end
+    
+        Tabs.Main:AddButton({
+        Title = "Infinite Yield",
+        Description = "FE 'Admin' Script",
+        Callback = function()
+         loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end
+    })
+    
+        Tabs.Main:AddButton({
+        Title = "Dex",
+        Description = "View the game explorer",
+        Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/sauce-boss01/dex-for-loadstring/main/.gitignore"))()
+end
+    })
+    
+            Tabs.Misc:AddButton({
+        Title = "Hacker Chat",
+        Description = "When two or more people use this script they can use the text box to chat with each other privately and uncensored",
+        Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/rouxhaver/scripts-3/main/hacker%20chat.lua"))()
+end
+   })
+   
+               Tabs.Hubs:AddButton({
+        Title = "C00lGui reborn",
+        Description = "FE version of c00lgui",
+        Callback = function()
+         loadstring(game:GetObjects("rbxassetid://8127297852")[1].Source)()
+end
+   })
+   
+                  Tabs.Anim:AddButton({
+        Title = "Energyze remake",
+        Description = "Some animations",
+        Callback = function()
+         loadstring(game:HttpGet('https://pastebin.com/raw/LcUcK8z0'))()
+end
+   })
+local Slider = Tabs.User:AddSlider("Slider", {
+        Title = "Walk speed",
+        Description = "Change your character's speed",
+        Default = 16,
+        Min = 0,
+        Max = 500,
+        Rounding = 0,
+        Callback = function(Value)
+        
+            local player = game.Players.LocalPlayer
+
+if player and player.Character then
+    
+    local humanoid = player.Character:FindFirstChild("Humanoid")
+    if humanoid then
+        humanoid.WalkSpeed = Value
+    end
+end
+        end
+    })
+
+    Slider:OnChanged(function(Value)
+        local player = game.Players.LocalPlayer
+
+if player and player.Character then
+    
+    local humanoid = player.Character:FindFirstChild("Humanoid")
+    if humanoid then
+        humanoid.WalkSpeed = Value
+    end
+end
+    end)
+
+    Slider:SetValue(16)  
+    --------------------------------
+    local Slider = Tabs.User:AddSlider("Slider", {
+        Title = "Jump power",
+        Description = "Change your character's jump",
+        Default = 50,
+        Min = 0,
+        Max = 500,
+        Rounding = 0,
+        Callback = function(Value)
+        
+            local player = game.Players.LocalPlayer
+
+if player and player.Character then
+    
+    local humanoid = player.Character:FindFirstChild("Humanoid")
+    if humanoid then
+        humanoid.JumpPower = Value
+    end
+end
+        end
+    })
+
+    Slider:OnChanged(function(Value)
+        local player = game.Players.LocalPlayer
+
+if player and player.Character then
+    
+    local humanoid = player.Character:FindFirstChild("Humanoid")
+    if humanoid then
+        humanoid.JumpPower = Value
+    end
+end
+    end)
+
+    Slider:SetValue(50)
+    ------------------------------------
+    
+  local Slider = Tabs.User:AddSlider("Slider", {
+        Title = "HipHeight",
+        Description = "Change your character's hip height",
+        Default = 0,
+        Min = 0,
+        Max = 50,
+        Rounding = 0,
+        Callback = function(Value)
+        
+            local player = game.Players.LocalPlayer
+
+if player and player.Character then
+    
+    local humanoid = player.Character:FindFirstChild("Humanoid")
+    if humanoid then
+        humanoid.HipHeight = Value
+    end
+end
+        end
+    })
+
+    Slider:OnChanged(function(Value)
+        local player = game.Players.LocalPlayer
+
+if player and player.Character then
+    
+    local humanoid = player.Character:FindFirstChild("Humanoid")
+    if humanoid then
+        humanoid.HipHeight = Value
+    end
+end
+    end)
+
+    Slider:SetValue(0)
+  
+   -------------------------------------
+        Tabs.Anim:AddButton({
+        Title = "Nullware V3",
+        Description = "Some animations",
+        Callback = function()
+         getgenv().Theme = "Blue" -- To change the UI Theme, set this to one of the following options: "Red", "Purple", "Blue", "Green", "Yellow"
+local LocalPlayer = game:GetService("Players").LocalPlayer
+local Heartbeat = game:GetService("RunService").Heartbeat
+
+Heartbeat:Connect(function()
+    LocalPlayer.MaximumSimulationRadius = 99999
+    sethiddenproperty(LocalPlayer, "SimulationRadius", 9999)
+end)
+-- Script above is a fix to limbs falling --
+
+-- Nullware Hub V3 | --
+getgenv().Theme = "Purple" -- To change the UI Theme, set this to one of the following options: "Red", "Purple", "Blue", "Green", "Yellow"
+loadstring(game:HttpGet("https://gist.githubusercontent.com/M6HqVBcddw2qaN4s/2d722888a388017c18028cd434c43a25/raw/dcccf1027fe4b90780e47767aaf584389c9d7771/EULma3fU90PUOKUn?identifier=".. (function()local a=""for b=1,256 do local c=math.random(1,3)a=a..string.char(c==1 and math.random(48,57)or c==2 and math.random(97,122)or c==3 and math.random(65,90))end;return a end)()))()
+         end
+         })
+         
+         Tabs.Misc:AddButton({
+        Title = "Fling Gui (spin)",
+        Description = "yeet",
+        Callback = function()
+         loadstring(game:HttpGet('https://pastebin.com/raw/r97d7dS0', true))()
+         end
+         })
+         
+          Tabs.Hubs:AddButton({
+        Title = "Goofy ahh hub (dangerous)",
+        Description = "goofiest hub",
+        Callback = function()
+         loadstring(game:HttpGet('https://raw.githubusercontent.com/yeerma/1/main/the_greatest_script_ever_made'))()
+         end
+         })
+         
+             Tabs.Misc:AddButton({
+        Title = "hat eat",
+        Description = "om nom nom (needs any hats)",
+        Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/sauce-boss01/hat-eat-for-loadstring/main/.gitignore"))()
+         end
+         })
+         
+                      Tabs.Main:AddButton({
+        Title = "SimpleSpyV3",
+        Description = "A utility remote spy to make scripts",
+        Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/SimpleSpyV3/main.lua"))()
+         end
+         })
+         
+                               Tabs.Main:AddButton({
+        Title = "Turtle Spy",
+        Description = "Another utility remote spy to make scripts",
+        Callback = function()
+         loadstring(game:HttpGet("https://pastebin.com/raw/BDhSQqUU", true))()
+         end
+         })
+         
+        Tabs.Main:AddButton({
+        Title = "Hydroxide",
+        Description = "Upvalue scanner, script scanner (kinda), constant scanner, remote spy and closure spy",
+        Callback = function()
+         local owner = "Upbolt"
+local branch = "revision"
+
+local function webImport(file)
+    return loadstring(game:HttpGetAsync(("https://raw.githubusercontent.com/%s/Hydroxide/%s/%s.lua"):format(owner, branch, file)), file .. '.lua')()
+end
+
+webImport("init")
+webImport("ui/main")
+         end
+         })
+         
+         
+         
+         
+----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
+                                           --SETTINGS--
+   
+   SaveManager:SetLibrary(Fluent)
+InterfaceManager:SetLibrary(Fluent)
+
+SaveManager:IgnoreThemeSettings()
+
+SaveManager:SetIgnoreIndexes({})
+
+InterfaceManager:SetFolder("FluentScriptHub")
+SaveManager:SetFolder("FluentScriptHub/specific-game")
+
+InterfaceManager:BuildInterfaceSection(Tabs.Settings)
+
