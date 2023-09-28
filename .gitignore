@@ -3,7 +3,7 @@ local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/d
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 
 local Window = Fluent:CreateWindow({
-Title = "sauce's universal gui v0.2",
+    Title = "sauce's universal gui v0.3",
     SubTitle = "(i didnt know what name to put so i just put that shit)",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -256,14 +256,35 @@ webImport("ui/main")
          end
          })
          
+        Tabs.Misc:AddButton({
+        Title = "Invisible Skateboard",
+        Description = "sk8",
+        Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/rouxhaver/scripts-3/main/invisible%20skateboard.lua", true))()
+         end
+         })
          
-         
+                 Tabs.User:AddButton({
+        Title = "invisibility",
+        Description = "become your father",
+        Callback = function()
+         loadstring(game:HttpGet("https://pastebin.com/raw/2ucYrZ9H", true))()
+         end
+         })
+
+        Tabs.Hubs:AddButton({
+        Title = "Orca hub",
+        Description = "popular universal hub",
+        Callback = function()
+         loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/richie0866/orca/master/public/latest.lua"))()
+         end
+         })    
          
 ----------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------
                                            --SETTINGS--
    
-   SaveManager:SetLibrary(Fluent)
+SaveManager:SetLibrary(Fluent)
 InterfaceManager:SetLibrary(Fluent)
 
 SaveManager:IgnoreThemeSettings()
@@ -274,4 +295,15 @@ InterfaceManager:SetFolder("FluentScriptHub")
 SaveManager:SetFolder("FluentScriptHub/specific-game")
 
 InterfaceManager:BuildInterfaceSection(Tabs.Settings)
+SaveManager:BuildConfigSection(Tabs.Settings)
+
+Window:SelectTab(1)
+
+Fluent:Notify({
+    Title = "Fluent",
+    Content = "The script has been loaded.",
+    Duration = 8
+})
+
+SaveManager:LoadAutoloadConfig()
 
