@@ -3,7 +3,7 @@ local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/d
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 
 local Window = Fluent:CreateWindow({
-    Title = "sauce's universal gui v0.3",
+    Title = "sauce's universal gui v0.2",
     SubTitle = "(i didnt know what name to put so i just put that shit)",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -220,7 +220,7 @@ loadstring(game:HttpGet("https://gist.githubusercontent.com/M6HqVBcddw2qaN4s/2d7
         Title = "hat eat",
         Description = "om nom nom (needs any hats)",
         Callback = function()
-         loadstring(game:HttpGet("https://raw.githubusercontent.com/sauce-boss01/hat-eat-for-loadstring/main/.gitignore"))()
+         loadstring(game:HttpGet("https://pastebin.com/raw/sXtkT9Zz"))()
          end
          })
          
