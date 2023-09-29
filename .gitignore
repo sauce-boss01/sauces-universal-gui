@@ -27,8 +27,8 @@ local Options = Fluent.Options
 do
     Fluent:Notify({
         Title = "Notification",
-        Content = "loaded succesfully",
-        SubContent = "H to toggle",
+        Content = "Universal Hub Loaded!",
+        SubContent = "sauce_boss01 in discord",
         Duration = 5
     })
     
@@ -142,7 +142,8 @@ end
     end)
 
     Slider:SetValue(50)
-    ------------------------------------
+    
+    ------------------------------------------
     
   local Slider = Tabs.User:AddSlider("Slider", {
         Title = "HipHeight",
@@ -179,7 +180,44 @@ end
 
     Slider:SetValue(0)
   
-   -------------------------------------
+       ------------------------------------
+        local Slider = Tabs.User:AddSlider("Slider", {
+        Title = "FOV",
+        Description = "Change your field of view (default is 70)",
+        Default = 70,
+        Min = 0,
+        Max = 120,
+        Rounding = 0,
+        Callback = function(Value)
+        
+            local player = game.Players.LocalPlayer
+
+if player and player.Character then
+    
+    local humanoid = player.Character:FindFirstChild("Humanoid")
+    if humanoid then
+        game.Workspace.Camera.FieldOfView = Value
+    end
+end
+        end
+    })
+
+    Slider:OnChanged(function(Value)
+        local player = game.Players.LocalPlayer
+
+if player and player.Character then
+    
+    local humanoid = player.Character:FindFirstChild("Humanoid")
+    if humanoid then
+        game.Workspace.Camera.FieldOfView = Value
+    end
+end
+    end)
+
+    Slider:SetValue(70)
+--------------------------------------------------------
+
+
         Tabs.Anim:AddButton({
         Title = "Nullware V3",
         Description = "Some more animations",
