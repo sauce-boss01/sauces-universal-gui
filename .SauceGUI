@@ -58,6 +58,9 @@ end
 end
    })
    
+
+   
+   
                Tabs.Hubs:AddButton({
         Title = "C00lGui reborn",
         Description = "FE version of c00lgui",
@@ -325,6 +328,25 @@ webImport("ui/main")
          loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/sauce-boss01/FEAG-Sound-Gui/main/.lua"))()
          end
          }) 
+         
+                        Tabs.User:AddButton({
+        Title = "Teleport Tool",
+        Description = "name says all",
+        Callback = function()
+         mouse = game.Players.LocalPlayer:GetMouse()
+tool = Instance.new("Tool")
+tool.RequiresHandle = false
+tool.Name = "teleport tool (real!1!1)"
+tool.Activated:connect(function()
+local pos = mouse.Hit+Vector3.new(0,2.5,0)
+pos = CFrame.new(pos.X,pos.Y,pos.Z)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
+end)
+tool.Parent = game.Players.LocalPlayer.Backpack
+end
+   })
+   
+         
          
 ----------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------
