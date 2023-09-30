@@ -156,8 +156,8 @@ local UserHeight = humanoid and humanoid.HipHeight or 0
         Description = "Change your character's hip height",
         Default = 0,
         Min = UserHeight,
-        Max = 50,
-        Rounding = 10,
+        Max = 50, 
+        Rounding = 0,
         Callback = function(Value)
         
             local player = game.Players.LocalPlayer
@@ -185,6 +185,7 @@ end
     end)
 
     Slider:SetValue(UserHeight)
+  print(UserHeight)
        ------------------------------------
         local Slider = Tabs.User:AddSlider("Slider", {
         Title = "FOV",
