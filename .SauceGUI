@@ -3,7 +3,7 @@ local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/d
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 
 local Window = Fluent:CreateWindow({
-    Title = "sauce's universal gui v0.2",
+    Title = "sauce's universal gui v0.3.1",
     SubTitle = "(i didnt know what name to put so i just put that shit)",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -317,6 +317,14 @@ webImport("ui/main")
          loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/richie0866/orca/master/public/latest.lua"))()
          end
          })    
+         
+                 Tabs.Misc:AddButton({
+        Title = "FE Sound Spammer GUI",
+        Description = "very epic trollin script",
+        Callback = function()
+         loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/sauce-boss01/FEAG-Sound-Gui/main/.lua"))()
+         end
+         }) 
          
 ----------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------
