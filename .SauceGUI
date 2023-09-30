@@ -349,23 +349,8 @@ tool.Parent = game.Players.LocalPlayer.Backpack
 end
    })
    
-   local GTS = {}
-         Tabs.Misc:AddButton({
-        Title = "Show all guis",
-        Description = "i see all",
-        Callback = function()
-         
-         for i,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui:GetDescendants()) do
-		if v:IsA("Frame") and v.Visible == false then
-			v.Visible = true
-			
-		end
-	end
-         
-         end
-         })
 ---------------------------------------------------------------------------
-        local Toggle = Tabs.Main:AddToggle("MyToggle", { Title = "ShowGuis", Default = false })
+        local Toggle = Tabs.Misc:AddToggle("MyToggle", { Title = "ShowGuis", Default = false })
 
     local isToggled = false
 
@@ -386,15 +371,13 @@ end
             for i,v in pairs(GTS) do
                 v.Visible = false
             end
-            --------------------------------
+            -------------------------------
         end
     end)
 
     Options.MyToggle:SetValue(false)
-----------------------------------------------
----------------------------------------------
 
-
+-------------------------------------------
 ----------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------
                                            --SETTINGS--
