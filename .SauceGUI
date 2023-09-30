@@ -3,7 +3,7 @@ local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/d
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 
 local Window = Fluent:CreateWindow({
-    Title = "sauce's universal gui v0.3.1",
+    Title = "sauce's universal gui v0.3.2",
     SubTitle = "(i didnt know what name to put so i just put that shit)",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -346,6 +346,20 @@ tool.Parent = game.Players.LocalPlayer.Backpack
 end
    })
    
+         Tabs.Misc:AddButton({
+        Title = "Show all guis",
+        Description = "i see all",
+        Callback = function()
+         
+         for i,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui:GetDescendants()) do
+		if v:IsA("Frame") and v.Visible == false then
+			v.Visible = true
+			
+		end
+	end
+         
+         end
+         })
          
          
 ----------------------------------------------------------------------------------------------
@@ -374,4 +388,3 @@ Fluent:Notify({
 })
 
 SaveManager:LoadAutoloadConfig()
-
