@@ -147,12 +147,15 @@ end
     Slider:SetValue(50)
     
     ------------------------------------------
-    
+local player = game.Players.LocalPlayer
+local character = player.Character
+local humanoid = character and character:FindFirstChild("Humanoid")
+local UserHeight = humanoid and humanoid.HipHeight
   local Slider = Tabs.User:AddSlider("Slider", {
         Title = "HipHeight",
         Description = "Change your character's hip height",
         Default = 0,
-        Min = 0,
+        Min = UserHeight,
         Max = 50,
         Rounding = 0,
         Callback = function(Value)
@@ -181,7 +184,7 @@ if player and player.Character then
 end
     end)
 
-    Slider:SetValue(0)
+    Slider:SetValue(UserHeight)
   
        ------------------------------------
         local Slider = Tabs.User:AddSlider("Slider", {
@@ -346,6 +349,7 @@ tool.Parent = game.Players.LocalPlayer.Backpack
 end
    })
    
+   local GTS = {}
          Tabs.Misc:AddButton({
         Title = "Show all guis",
         Description = "i see all",
@@ -360,8 +364,37 @@ end
          
          end
          })
-         
-         
+---------------------------------------------------------------------------
+        local Toggle = Tabs.Main:AddToggle("MyToggle", { Title = "ShowGuis", Default = false })
+
+    local isToggled = false
+
+    Toggle:OnChanged(function()
+        isToggled = not isToggled
+        if isToggled then
+            ------------------------------
+            GTS = {}
+            for i,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui:GetDescendants()) do
+                if v:IsA("Frame") and v.Visible == false then
+                    v.Visible = true
+                    GTS[#GTS+1] = v
+                end
+            end
+            ------------------------------
+        else
+            ------------------------------
+            for i,v in pairs(GTS) do
+                v.Visible = false
+            end
+            --------------------------------
+        end
+    end)
+
+    Options.MyToggle:SetValue(false)
+----------------------------------------------
+---------------------------------------------
+
+
 ----------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------
                                            --SETTINGS--
@@ -382,7 +415,7 @@ SaveManager:BuildConfigSection(Tabs.Settings)
 Window:SelectTab(1)
 
 Fluent:Notify({
-    Title = "Fluent",
+    Title = "SauceGUI",
     Content = "The script has been loaded.",
     Duration = 8
 })
