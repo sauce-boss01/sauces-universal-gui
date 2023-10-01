@@ -18,6 +18,7 @@ local Window = Fluent:CreateWindow({
     Anim = Window:AddTab({ Title = "Animations", Icon = "person-standing" }),
     Hubs = Window:AddTab({ Title = "Hubs", Icon = "focus" }),
     User = Window:AddTab({ Title = "Character", Icon = "user" }),
+    Games = Window:AddTab({ Title = "Games", Icon = "gamepad-2" }),
     
     Settings = Window:AddTab({ Title = "Settings", Icon = "settings" })
 }
@@ -378,6 +379,42 @@ end
     Options.MyToggle:SetValue(false)
 
 -------------------------------------------
+
+Tabs.Games:AddButton({
+    Title = "Rate my avatar",
+    Description = "Script for RMA",
+    Callback = function()
+        if game.PlaceId == 6708206173 then
+            loadstring(game:HttpGet('https://raw.githubusercontent.com/sauce-boss01/rma-script/main/rma'))()
+        else
+            Window:Dialog({
+                Title = "Not in the game",
+                Content = "Go to the game, dumbass!",
+                Buttons = {
+                    {
+                        Title = "Join Rate my avatar",
+                        Callback = function()
+                            local destinationPlaceId = 6708206173
+
+game:GetService("TeleportService"):Teleport(destinationPlaceId)
+
+                        end
+                    },
+                    {
+                        Title = "Cancel",
+                        Callback = function()
+                            print("Canceled")
+                        end
+                    }
+                }
+            })
+        end
+    end
+})
+
+
+
+
 ----------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------
                                            --SETTINGS--
