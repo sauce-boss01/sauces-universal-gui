@@ -157,7 +157,7 @@ local UserHeight = humanoid and humanoid.HipHeight or 0
         Default = 0,
         Min = UserHeight,
         Max = 50, 
-        Rounding = 0,
+        Rounding = 1,
         Callback = function(Value)
         
             local player = game.Players.LocalPlayer
