@@ -223,7 +223,37 @@ end
 
     Slider:SetValue(70)
 --------------------------------------------------------
+       ------------------------------------
 
+
+local workspace = game:GetService("Workspace")
+local GameGravity = workspace.Gravity
+
+local function updateGravity()
+    workspace.Gravity = GameGravity
+    print(GameGravity)
+end
+
+local Slider = Tabs.User:AddSlider("Slider", {
+    Title = "Gravity",
+    Description = "Change the gravity value",
+    Default = GameGravity,
+    Min = 0,
+    Max = 400,
+    Rounding = 0,
+    Callback = function(Value)
+        GameGravity = Value
+        updateGravity() 
+    end
+})
+
+
+Slider:SetValue(GameGravity)
+
+
+updateGravity()
+    
+----------------------------------------------
 
         Tabs.Anim:AddButton({
         Title = "Nullware V3",
