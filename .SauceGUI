@@ -2,8 +2,12 @@ local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 
+local player = game.Players.LocalPlayer
+local character = player.Character
+local humanoid = character and character:FindFirstChild("Humanoid")
+
 local Window = Fluent:CreateWindow({
-    Title = "sauce's universal gui v0.3.3",
+    Title = "sauce's universal gui v0.3.4",
     SubTitle = "(i didnt know what name to put so i just put that shit)",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -77,12 +81,14 @@ end
          loadstring(game:HttpGet('https://pastebin.com/raw/LcUcK8z0'))()
 end
    })
-local Slider = Tabs.User:AddSlider("Slider", {
-        Title = "Walk speed",
+   -------------------------------------------------
+local UserSpeed = humanoid and humanoid.WalkSpeed
+  local Slider = Tabs.User:AddSlider("Slider", {
+        Title = "Walk Speed",
         Description = "Change your character's speed",
-        Default = 16,
-        Min = 0,
-        Max = 500,
+        Default = 0,
+        Min = 1,
+        Max = 500, 
         Rounding = 0,
         Callback = function(Value)
         
@@ -97,27 +103,17 @@ if player and player.Character then
 end
         end
     })
-
-    Slider:OnChanged(function(Value)
-        local player = game.Players.LocalPlayer
-
-if player and player.Character then
-    
-    local humanoid = player.Character:FindFirstChild("Humanoid")
-    if humanoid then
-        humanoid.WalkSpeed = Value
-    end
-end
-    end)
-
-    Slider:SetValue(16)  
+    Slider:SetValue(UserSpeed)
     --------------------------------
-    local Slider = Tabs.User:AddSlider("Slider", {
-        Title = "Jump power",
-        Description = "Change your character's jump",
-        Default = 50,
+    humanoid.UseJumpPower = true
+local UserJump = humanoid and humanoid.JumpPower
+
+  local Slider = Tabs.User:AddSlider("Slider", {
+        Title = "Jump Power",
+        Description = "Change your character's jump power",
+        Default = 0,
         Min = 0,
-        Max = 500,
+        Max = 400, 
         Rounding = 0,
         Callback = function(Value)
         
@@ -132,25 +128,11 @@ if player and player.Character then
 end
         end
     })
-
-    Slider:OnChanged(function(Value)
-        local player = game.Players.LocalPlayer
-
-if player and player.Character then
     
-    local humanoid = player.Character:FindFirstChild("Humanoid")
-    if humanoid then
-        humanoid.JumpPower = Value
-    end
-end
-    end)
-
-    Slider:SetValue(50)
+    Slider:SetValue(UserJump)
     
     ------------------------------------------
-local player = game.Players.LocalPlayer
-local character = player.Character
-local humanoid = character and character:FindFirstChild("Humanoid")
+
 local UserHeight = humanoid and humanoid.HipHeight or 0
   local Slider = Tabs.User:AddSlider("Slider", {
         Title = "HipHeight",
@@ -186,12 +168,16 @@ end
     end)
 
     Slider:SetValue(UserHeight)
-  print(UserHeight)
+   
+  print("hh: " .. UserHeight)
+  
        ------------------------------------
+       local UserFov = game.Workspace.Camera.FieldOfView
+       
         local Slider = Tabs.User:AddSlider("Slider", {
         Title = "FOV",
         Description = "Change your field of view (default is 70)",
-        Default = 70,
+        Default = UserFov,
         Min = 0,
         Max = 120,
         Rounding = 0,
@@ -201,17 +187,15 @@ end
 
 if player and player.Character then
     
-    local humanoid = player.Character:FindFirstChild("Humanoid")
     if humanoid then
-        game.Workspace.Camera.FieldOfView = Value
+        UserFov = Value
     end
 end
         end
     })
 
     Slider:OnChanged(function(Value)
-        local player = game.Players.LocalPlayer
-
+ 
 if player and player.Character then
     
     local humanoid = player.Character:FindFirstChild("Humanoid")
@@ -221,17 +205,17 @@ if player and player.Character then
 end
     end)
 
-    Slider:SetValue(70)
+    Slider:SetValue(UserFov)
 --------------------------------------------------------
        ------------------------------------
 
 
-local workspace = game:GetService("Workspace")
-local GameGravity = workspace.Gravity
+
+local GameGravity = game:GetService("Workspace").Gravity
 
 local function updateGravity()
-    workspace.Gravity = GameGravity
-    print(GameGravity)
+    game:GetService("Workspace").Gravity = GameGravity
+    
 end
 
 local Slider = Tabs.User:AddSlider("Slider", {
@@ -247,6 +231,7 @@ local Slider = Tabs.User:AddSlider("Slider", {
     end
 })
 
+print("g: " .. GameGravity)
 
 Slider:SetValue(GameGravity)
 
@@ -380,6 +365,15 @@ tool.Parent = game.Players.LocalPlayer.Backpack
 end
    })
    
+   
+            Tabs.Anim:AddButton({
+        Title = "FeFlip",
+        Description = "very c00l script",
+        Callback = function()
+         loadstring(game:HttpGet('https://pastebin.com/raw/Fd7Eaen3', true))()
+         end
+         })
+   
 ---------------------------------------------------------------------------
         local Toggle = Tabs.Misc:AddToggle("MyToggle", { Title = "ShowGuis", Default = false })
 
@@ -408,7 +402,7 @@ end
 
     Options.MyToggle:SetValue(false)
 
--------------------------------------------
+-------------------------------------------rma
 
 Tabs.Games:AddButton({
     Title = "Rate my avatar",
@@ -433,7 +427,7 @@ game:GetService("TeleportService"):Teleport(destinationPlaceId)
                     {
                         Title = "Cancel",
                         Callback = function()
-                            print("Canceled")
+                            print("Teleport Canceled")
                         end
                     }
                 }
@@ -442,7 +436,88 @@ game:GetService("TeleportService"):Teleport(destinationPlaceId)
     end
 })
 
+--------------mm2
 
+
+Tabs.Games:AddButton({
+    Title = "Murder Mystery 2",
+    Description = "Script for mm2",
+    Callback = function()
+        if game.PlaceId == 142823291 then
+           loadstring(game:HttpGet("https://raw.githubusercontent.com/vwSaraa/LunarHub/main/mm2"))()
+        else
+            Window:Dialog({
+                Title = "Not in the game",
+                Content = "Go to the game, dumbass!",
+                Buttons = {
+                    {
+                        Title = "Join Murder Mystery 2",
+                        Callback = function()
+                            local destinationPlaceId = 142823291
+
+game:GetService("TeleportService"):Teleport(destinationPlaceId)
+
+                        end
+                    },
+                    {
+                        Title = "Cancel",
+                        Callback = function()
+                            print("Teleport Canceled")
+                        end
+                    }
+                }
+            })
+        end
+    end
+})
+
+--------------Blade Ball
+
+
+Tabs.Games:AddButton({
+    Title = "Blade Ball",
+    Description = "Script for Blade Ball",
+    Callback = function()
+        if game.PlaceId == 13772394625 then
+           
+           getgenv().Mode = "AI" -- "AimOnly","Rage", "AI" 
+getgenv().ForceWin = false --100% Win Need Telekenis 
+getgenv().AutoUseSkill = true 
+getgenv().BaseVelocity = 0 --Base On The Server, IDK Where To Get it It Should Be 4-6 Or 0 (Old Server) 
+getgenv().BasePredictVelocity = 3.4 -- Should be From 3-3.5 Work Good With 3 If Old Server 
+getgenv().VisualizePath = true -- false // 
+getgenv().AutoSpamClickDetect = true -- Spam Click If Near Other Player 
+getgenv().CloseRangeAttack = true -- Just Move Forward To The Last Character 
+getgenv().AutoGetVelocity = false -- Need The Ball To Be Stopped 
+getgenv().AutoClickKeyBind = "X" -- Need The Ball To Be Stopped 
+
+loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/fd07660d92cb26891e9acfab9f0c6ba4.lua"))()
+           
+        else
+            Window:Dialog({
+                Title = "Not in the game",
+                Content = "Go to the game, dumbass!",
+                Buttons = {
+                    {
+                        Title = "Join Blade Ball",
+                        Callback = function()
+                            local destinationPlaceId = 13772394625
+
+game:GetService("TeleportService"):Teleport(destinationPlaceId)
+
+                        end
+                    },
+                    {
+                        Title = "Cancel",
+                        Callback = function()
+                            print("Teleport Canceled")
+                        end
+                    }
+                }
+            })
+        end
+    end
+})
 
 
 ----------------------------------------------------------------------------------------------
