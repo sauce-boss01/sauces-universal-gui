@@ -8,7 +8,7 @@ local humanoid = character and character:FindFirstChild("Humanoid")
 
 local Window = Fluent:CreateWindow({
     Title = "sauce's universal gui v0.3.4",
-    SubTitle = "(i didnt know what name to put so i just put that shit)",
+    SubTitle = "Made By sauce_boss01 In Discord.",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
     Acrylic = true, --The blur may be detectable, setting this to false disables this setting completley need high graphics
@@ -30,12 +30,7 @@ local Window = Fluent:CreateWindow({
 local Options = Fluent.Options
 
 do
-    Fluent:Notify({
-        Title = "Notification",
-        Content = "Universal Hub Loaded!",
-        SubContent = "sauce_boss01 in discord",
-        Duration = 5
-    })
+ 
     
     end
     
@@ -480,18 +475,7 @@ Tabs.Games:AddButton({
     Callback = function()
         if game.PlaceId == 13772394625 then
            
-           getgenv().Mode = "AI" -- "AimOnly","Rage", "AI" 
-getgenv().ForceWin = false --100% Win Need Telekenis 
-getgenv().AutoUseSkill = true 
-getgenv().BaseVelocity = 0 --Base On The Server, IDK Where To Get it It Should Be 4-6 Or 0 (Old Server) 
-getgenv().BasePredictVelocity = 3.4 -- Should be From 3-3.5 Work Good With 3 If Old Server 
-getgenv().VisualizePath = true -- false // 
-getgenv().AutoSpamClickDetect = true -- Spam Click If Near Other Player 
-getgenv().CloseRangeAttack = true -- Just Move Forward To The Last Character 
-getgenv().AutoGetVelocity = false -- Need The Ball To Be Stopped 
-getgenv().AutoClickKeyBind = "X" -- Need The Ball To Be Stopped 
-
-loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/fd07660d92cb26891e9acfab9f0c6ba4.lua"))()
+ loadstring(game:HttpGet("https://paste.gg/p/anonymous/42c468c6f0d94d6a86fc90caf7f0e897/files/9d3a059ff4064dc0b9efe621c774d175/raw"))()
            
         else
             Window:Dialog({
@@ -502,6 +486,43 @@ loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/fd07660d92cb26
                         Title = "Join Blade Ball",
                         Callback = function()
                             local destinationPlaceId = 13772394625
+
+game:GetService("TeleportService"):Teleport(destinationPlaceId)
+
+                        end
+                    },
+                    {
+                        Title = "Cancel",
+                        Callback = function()
+                            print("Teleport Canceled")
+                        end
+                    }
+                }
+            })
+        end
+    end
+})
+--------------Survive and Kill the Killers in Area 51 
+
+Tabs.Games:AddButton({
+    Title = "Survive and Kill the Killers in Area 51 ",
+    Description = "Script for Survive and Kill the Killers in Area 51 (classic mode) ",
+    Callback = function()
+        if game.PlaceId == 2092166489 then
+
+           _G.RedGUI = true
+_G.Theme = "Dark"
+loadstring(game:HttpGet("https://raw.githubusercontent.com/CasperFlyModz/discord.gg-rips/main/SurviveandKilltheKillersinArea51.lua"))()
+           
+        else
+            Window:Dialog({
+                Title = "Not in the game",
+                Content = "Go to the game, dumbass!",
+                Buttons = {
+                    {
+                        Title = "Join survive area 51",
+                        Callback = function()
+                            local destinationPlaceId = 155382109
 
 game:GetService("TeleportService"):Teleport(destinationPlaceId)
 
@@ -541,8 +562,18 @@ Window:SelectTab(1)
 
 Fluent:Notify({
     Title = "SauceGUI",
-    Content = "The script has been loaded.",
+    Content = "The script has been loaded succesfully.",
     Duration = 8
 })
 
+   Fluent:Notify({
+        Title = "Notification",
+        Content = "Universal Hub Loaded!",
+        SubContent = "sauce_boss01 in discord",
+        Duration = 5
+    })
+
+
+
 SaveManager:LoadAutoloadConfig()
+
