@@ -229,8 +229,33 @@ webImport("ui/main")
 
     Options.MyToggle:SetValue(false)
 
--------------------------------------------rma
+        Tabs.Hubs:AddButton({
+        Title = "EZ Hub",
+        Description = "ez",
+        Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/debug420/Ez-Hub/master/EzHub.lua"))()
+end
+        })
 
+
+        Tabs.Misc:AddButton({
+        Title = "Become ball",
+        Description = "balls!1??1!?",
+        Callback = function()
+         loadstring(game:HttpGet('https://pastebin.com/raw/EJskzezp'))()
+         end
+         })
+
+
+
+
+
+----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
+                                           --GAMES--
+
+
+-------------------------------------------rma
 Tabs.Games:AddButton({
     Title = "Rate my avatar",
     Description = "Script for RMA",
@@ -752,6 +777,14 @@ end)
 tool.Parent = game.Players.LocalPlayer.Backpack
 end
    })
+
+              Tabs.User:AddButton({
+        Title = "Player collision",
+        Description = "enable collision with other players (can't fling since it's not serversided)",
+        Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/rouxhaver/scripts/main/Local%20Full%20Player%20Collision.Lua", true))()
+         end
+         })
 ----------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------
 Fluent:Notify({
