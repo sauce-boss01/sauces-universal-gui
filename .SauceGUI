@@ -68,7 +68,15 @@ end
          loadstring(game:GetObjects("rbxassetid://8127297852")[1].Source)()
 end
    })
-   
+
+               Tabs.Hubs:AddButton({
+        Title = "B4RKS Bypasser",
+        Description = "Best bypasser script",
+        Callback = function()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/BakaPraselol/MRCBV4LSB4KRS/main/Loader"))()
+end
+   })
+
                   Tabs.Anim:AddButton({
         Title = "Energyze remake",
         Description = "Some animations",
