@@ -98,6 +98,7 @@ if player and player.Character then
 end
         end
     })
+
     Slider:SetValue(UserSpeed)
     --------------------------------
     humanoid.UseJumpPower = true
