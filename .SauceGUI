@@ -6,6 +6,10 @@ local player = game.Players.LocalPlayer
 local character = player.Character
 local humanoid = character and character:FindFirstChild("Humanoid")
 
+--print teh credit--
+print (tostring(game:HttpGet("https://pastebin.com/raw/DKtbHiZh", true)))
+
+
 local Window = Fluent:CreateWindow({
     Title = "sauce's universal gui v0.3.5",
     SubTitle = "Made By sauce_boss01 In Discord.",
@@ -799,3 +803,4 @@ Fluent:Notify({
         SubContent = "sauce_boss01 in discord",
         Duration = 5
     })
+    
