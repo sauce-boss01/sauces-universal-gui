@@ -7,7 +7,7 @@ local character = player.Character
 local humanoid = character and character:FindFirstChild("Humanoid")
 
 local Window = Fluent:CreateWindow({
-    Title = "sauce's universal gui v0.3.4",
+    Title = "sauce's universal gui v0.3.5",
     SubTitle = "Made By sauce_boss01 In Discord.",
     TabWidth = 160,
     Size = UDim2.fromOffset(580, 460),
@@ -34,6 +34,11 @@ do
     
     end
     
+    Tabs.Main:AddParagraph({
+        Title = "Recommended to use Electron or Fluxus",
+        Content = "Only tested in Electron and Fluxus, Other executors may not work well"
+    })
+
         Tabs.Main:AddButton({
         Title = "Infinite Yield",
         Description = "FE 'Admin' Script",
@@ -84,165 +89,6 @@ end
          loadstring(game:HttpGet('https://pastebin.com/raw/LcUcK8z0'))()
 end
    })
-   -------------------------------------------------
-local UserSpeed = humanoid and humanoid.WalkSpeed
-  local Slider = Tabs.User:AddSlider("Slider", {
-        Title = "Walk Speed",
-        Description = "Change your character's speed",
-        Default = 0,
-        Min = 1,
-        Max = 500, 
-        Rounding = 0,
-        Callback = function(Value)
-        
-            local player = game.Players.LocalPlayer
-
-if player and player.Character then
-    
-    local humanoid = player.Character:FindFirstChild("Humanoid")
-    if humanoid then
-        humanoid.WalkSpeed = Value
-    end
-end
-        end
-    })
-
-    Slider:SetValue(UserSpeed)
-    --------------------------------
-    humanoid.UseJumpPower = true
-local UserJump = humanoid and humanoid.JumpPower
-
-  local Slider = Tabs.User:AddSlider("Slider", {
-        Title = "Jump Power",
-        Description = "Change your character's jump power",
-        Default = 0,
-        Min = 0,
-        Max = 400, 
-        Rounding = 0,
-        Callback = function(Value)
-        
-            local player = game.Players.LocalPlayer
-
-if player and player.Character then
-    
-    local humanoid = player.Character:FindFirstChild("Humanoid")
-    if humanoid then
-        humanoid.JumpPower = Value
-    end
-end
-        end
-    })
-    
-    Slider:SetValue(UserJump)
-    
-    ------------------------------------------
-
-local UserHeight = humanoid and humanoid.HipHeight or 0
-  local Slider = Tabs.User:AddSlider("Slider", {
-        Title = "HipHeight",
-        Description = "Change your character's hip height",
-        Default = 0,
-        Min = 0,
-        Max = 50, 
-        Rounding = 1,
-        Callback = function(Value)
-        
-            local player = game.Players.LocalPlayer
-
-if player and player.Character then
-    
-    local humanoid = player.Character:FindFirstChild("Humanoid")
-    if humanoid then
-        humanoid.HipHeight = Value
-    end
-end
-        end
-    })
-
-    Slider:OnChanged(function(Value)
-        local player = game.Players.LocalPlayer
-
-if player and player.Character then
-    
-    local humanoid = player.Character:FindFirstChild("Humanoid")
-    if humanoid then
-        humanoid.HipHeight = Value
-    end
-end
-    end)
-
-    Slider:SetValue(UserHeight)
-   
-  print("hh: " .. UserHeight)
-  
-       ------------------------------------
-       local UserFov = game.Workspace.Camera.FieldOfView
-       
-        local Slider = Tabs.User:AddSlider("Slider", {
-        Title = "FOV",
-        Description = "Change your field of view (default is 70)",
-        Default = UserFov,
-        Min = 0,
-        Max = 120,
-        Rounding = 0,
-        Callback = function(Value)
-        
-            local player = game.Players.LocalPlayer
-
-if player and player.Character then
-    
-    if humanoid then
-        UserFov = Value
-    end
-end
-        end
-    })
-
-    Slider:OnChanged(function(Value)
- 
-if player and player.Character then
-    
-    local humanoid = player.Character:FindFirstChild("Humanoid")
-    if humanoid then
-        game.Workspace.Camera.FieldOfView = Value
-    end
-end
-    end)
-
-    Slider:SetValue(UserFov)
---------------------------------------------------------
-       ------------------------------------
-
-
-
-local GameGravity = game:GetService("Workspace").Gravity
-
-local function updateGravity()
-    game:GetService("Workspace").Gravity = GameGravity
-    
-end
-
-local Slider = Tabs.User:AddSlider("Slider", {
-    Title = "Gravity",
-    Description = "Change the gravity value",
-    Default = GameGravity,
-    Min = 0,
-    Max = 400,
-    Rounding = 0,
-    Callback = function(Value)
-        GameGravity = Value
-        updateGravity() 
-    end
-})
-
-print("g: " .. GameGravity)
-
-Slider:SetValue(GameGravity)
-
-
-updateGravity()
-    
-----------------------------------------------
 
         Tabs.Anim:AddButton({
         Title = "Nullware V3",
@@ -328,14 +174,6 @@ webImport("ui/main")
          end
          })
          
-                 Tabs.User:AddButton({
-        Title = "invisibility",
-        Description = "become your father",
-        Callback = function()
-         loadstring(game:HttpGet("https://pastebin.com/raw/2ucYrZ9H", true))()
-         end
-         })
-
         Tabs.Hubs:AddButton({
         Title = "Orca hub",
         Description = "popular universal hub",
@@ -352,22 +190,7 @@ webImport("ui/main")
          end
          }) 
          
-                        Tabs.User:AddButton({
-        Title = "Teleport Tool",
-        Description = "name says all",
-        Callback = function()
-         mouse = game.Players.LocalPlayer:GetMouse()
-tool = Instance.new("Tool")
-tool.RequiresHandle = false
-tool.Name = "teleport tool (real!1!1)"
-tool.Activated:connect(function()
-local pos = mouse.Hit+Vector3.new(0,2.5,0)
-pos = CFrame.new(pos.X,pos.Y,pos.Z)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
-end)
-tool.Parent = game.Players.LocalPlayer.Backpack
-end
-   })
+ 
    
    
             Tabs.Anim:AddButton({
@@ -548,6 +371,176 @@ game:GetService("TeleportService"):Teleport(destinationPlaceId)
         end
     end
 })
+--------------Build A Boat For Treasure 
+
+Tabs.Games:AddButton({
+    Title = "Build A Boat For Treasure ",
+    Description = "Script for Build A Boat For Treasure",
+    Callback = function()
+        if game.PlaceId == 537413528 then
+
+loadstring(game:HttpGet('https://raw.githubusercontent.com/XRoLLu/UWU/main/BUILD%20A%20BOAT%20FOR%20TREASURE.lua'))()
+ 
+        else
+            Window:Dialog({
+                Title = "Not in the game",
+                Content = "Go to the game, dumbass!",
+                Buttons = {
+                    {
+                        Title = "Join Build A Boat For Treasure",
+                        Callback = function()
+                            local destinationPlaceId = 537413528
+
+game:GetService("TeleportService"):Teleport(destinationPlaceId)
+
+                        end
+                    },
+                    {
+                        Title = "Cancel",
+                        Callback = function()
+                            print("Teleport Canceled")
+                        end
+                    }
+                }
+            })
+        end
+    end
+})
+
+--------------3008 
+
+Tabs.Games:AddButton({
+    Title = "3008",
+    Description = "Script for 3008 (that scp ikea game)",
+    Callback = function()
+        if game.PlaceId == 2768379856 then
+            
+loadstring(game:HttpGet'https://raw.githubusercontent.com/RunDTM/scripts/main/3008.lua')()
+ 
+        else
+            Window:Dialog({
+                Title = "Not in the game",
+                Content = "Go to the game, dumbass!",
+                Buttons = {
+                    {
+                        Title = "Join 3008",
+                        Callback = function()
+                            local destinationPlaceId = 2768379856
+
+game:GetService("TeleportService"):Teleport(destinationPlaceId)
+
+                        end
+                    },
+                    {
+                        Title = "Cancel",
+                        Callback = function()
+                            print("Teleport Canceled")
+                        end
+                    }
+                }
+            })
+        end
+    end
+})
+--------------KAT
+
+Tabs.Games:AddButton({
+    Title = "KAT",
+    Description = "(op) Script for KAT ",
+    Callback = function()
+        if game.PlaceId == 621129760 then
+            
+loadstring(game:HttpGet("https://raw.githubusercontent.com/AndrewDarkyy/NOWAY/main/darkyyware.lua"))()
+ 
+        else
+            Window:Dialog({
+                Title = "Not in the game",
+                Content = "Go to the game, dumbass!",
+                Buttons = {
+                    {
+                        Title = "Join KAT",
+                        Callback = function()
+                            local destinationPlaceId = 621129760
+
+game:GetService("TeleportService"):Teleport(destinationPlaceId)
+
+                        end
+                    },
+                    {
+                        Title = "Cancel",
+                        Callback = function()
+                            print("Teleport Canceled")
+                        end
+                    }
+                }
+            })
+        end
+    end
+})
+
+--------------Be A Parkour Ninja
+
+Tabs.Games:AddButton({
+    Title = "Be A Parkour Ninja",
+    Description = "Script for Be A Parkour Ninja ",
+    Callback = function()
+        if game.PlaceId == 147848991 then
+            
+loadstring(game:HttpGet("https://raw.githubusercontent.com/NooVster/NOOVHUB/main/Source"))()
+
+
+
+wait(1)
+Fluent:Notify({
+        Title = "Bypassing key",
+        Content = "Loading...",
+        SubContent = "",
+        Duration = 5
+})
+
+wait(3)
+
+local notifSound = Instance.new("Sound",workspace)
+notifSound.PlaybackSpeed = 1
+notifSound.Volume = 3
+notifSound.SoundId = "rbxassetid://261072074"
+notifSound.PlayOnRemove = true
+notifSound:Destroy()
+
+  Fluent:Notify({
+        Title = "Bypass",
+        Content = "Bypassed Key, Key copied.",
+        SubContent = "Paste it into the text box",
+        Duration = 12
+    })
+
+setclipboard("96b5ef6e00-8ff6683644-00beaf24cd")
+
+        else
+            Window:Dialog({
+                Title = "Not in the game",
+                Content = "Go to the game, dumbass!",
+                Buttons = {
+                    {
+                        Title = "Join Be A Parkour Ninja",
+                        Callback = function()
+                            local destinationPlaceId = 147848991
+
+game:GetService("TeleportService"):Teleport(destinationPlaceId)
+
+                        end
+                    },
+                    {
+                        Title = "Cancel",
+                        Callback = function()
+                            print("Teleport Canceled")
+                        end
+                    }
+                }
+            })
+        end
+    end
+})
 
 
 ----------------------------------------------------------------------------------------------
@@ -569,6 +562,198 @@ SaveManager:BuildConfigSection(Tabs.Settings)
 
 Window:SelectTab(1)
 
+SaveManager:LoadAutoloadConfig()
+
+
+----------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------
+                                           --CHARACTER--
+
+ Tabs.User:AddParagraph({
+        Title = "Waring",
+        Content = "If theres nothing here it means that your character isnt loaded in, please re-execute when it is."
+    })
+
+local UserSpeed = humanoid and humanoid.WalkSpeed
+  local Slider = Tabs.User:AddSlider("Slider", {
+        Title = "Walk Speed",
+        Description = "Change your character's speed",
+        Default = 0,
+        Min = 1,
+        Max = 500, 
+        Rounding = 0,
+        Callback = function(Value)
+        
+            local player = game.Players.LocalPlayer
+
+if player and player.Character then
+    
+    local humanoid = player.Character:FindFirstChild("Humanoid")
+    if humanoid then
+        humanoid.WalkSpeed = Value
+    end
+end
+        end
+    })
+
+    Slider:SetValue(UserSpeed)
+    --------------------------------
+    humanoid.UseJumpPower = true
+local UserJump = humanoid and humanoid.JumpPower
+
+  local Slider = Tabs.User:AddSlider("Slider", {
+        Title = "Jump Power",
+        Description = "Change your character's jump power",
+        Default = 0,
+        Min = 0,
+        Max = 400, 
+        Rounding = 0,
+        Callback = function(Value)
+        
+            local player = game.Players.LocalPlayer
+
+if player and player.Character then
+    
+    local humanoid = player.Character:FindFirstChild("Humanoid")
+    if humanoid then
+        humanoid.JumpPower = Value
+    end
+end
+        end
+    })
+    
+    Slider:SetValue(UserJump)
+    
+    ------------------------------------------
+
+local UserHeight = humanoid and humanoid.HipHeight or 0
+  local Slider = Tabs.User:AddSlider("Slider", {
+        Title = "HipHeight",
+        Description = "Change your character's hip height",
+        Default = 0,
+        Min = 0,
+        Max = 50, 
+        Rounding = 1,
+        Callback = function(Value)
+        
+            local player = game.Players.LocalPlayer
+
+if player and player.Character then
+    
+    local humanoid = player.Character:FindFirstChild("Humanoid")
+    if humanoid then
+        humanoid.HipHeight = Value
+    end
+end
+        end
+    })
+
+    Slider:OnChanged(function(Value)
+        local player = game.Players.LocalPlayer
+
+if player and player.Character then
+    
+    local humanoid = player.Character:FindFirstChild("Humanoid")
+    if humanoid then
+        humanoid.HipHeight = Value
+    end
+end
+    end)
+
+    Slider:SetValue(UserHeight)
+   
+  print("hh: " .. UserHeight)
+  
+       ------------------------------------
+       local UserFov = game.Workspace.Camera.FieldOfView
+       
+        local Slider = Tabs.User:AddSlider("Slider", {
+        Title = "FOV",
+        Description = "Change your field of view (default is 70)",
+        Default = UserFov,
+        Min = 0,
+        Max = 120,
+        Rounding = 0,
+        Callback = function(Value)
+        
+            local player = game.Players.LocalPlayer
+
+if player and player.Character then
+    
+    if humanoid then
+        UserFov = Value
+    end
+end
+        end
+    })
+
+    Slider:OnChanged(function(Value)
+ 
+if player and player.Character then
+    
+    local humanoid = player.Character:FindFirstChild("Humanoid")
+    if humanoid then
+        game.Workspace.Camera.FieldOfView = Value
+    end
+end
+    end)
+
+    Slider:SetValue(UserFov)
+--------------------------------------------------------
+     
+local GameGravity = game:GetService("Workspace").Gravity
+
+local function updateGravity()
+    game:GetService("Workspace").Gravity = GameGravity
+    
+end
+
+local Slider = Tabs.User:AddSlider("Slider", {
+    Title = "Gravity",
+    Description = "Change the gravity value",
+    Default = GameGravity,
+    Min = 0,
+    Max = 400,
+    Rounding = 0,
+    Callback = function(Value)
+        GameGravity = Value
+        updateGravity() 
+    end
+})
+
+print("g: " .. GameGravity)
+
+Slider:SetValue(GameGravity)
+
+
+updateGravity()
+    -------------BUTTONS-------------------
+                 Tabs.User:AddButton({
+        Title = "invisibility",
+        Description = "become your father",
+        Callback = function()
+         loadstring(game:HttpGet("https://pastebin.com/raw/2ucYrZ9H", true))()
+         end
+         })
+
+   Tabs.User:AddButton({
+        Title = "Teleport Tool",
+        Description = "name says all",
+        Callback = function()
+         mouse = game.Players.LocalPlayer:GetMouse()
+tool = Instance.new("Tool")
+tool.RequiresHandle = false
+tool.Name = "teleport tool (real!1!1)"
+tool.Activated:connect(function()
+local pos = mouse.Hit+Vector3.new(0,2.5,0)
+pos = CFrame.new(pos.X,pos.Y,pos.Z)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = pos
+end)
+tool.Parent = game.Players.LocalPlayer.Backpack
+end
+   })
+----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
 Fluent:Notify({
     Title = "SauceGUI",
     Content = "The script has been loaded succesfully.",
@@ -581,8 +766,3 @@ Fluent:Notify({
         SubContent = "sauce_boss01 in discord",
         Duration = 5
     })
-
-
-
-SaveManager:LoadAutoloadConfig()
-
