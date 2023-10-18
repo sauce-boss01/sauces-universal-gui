@@ -248,18 +248,9 @@ end
          end
          })
 
-
-Tabs.Misc:AddButton({
-        Title = "Become ball",
-        Description = "balls!1??1!?",
-        Callback = function()
-         loadstring(game:HttpGet('https://pastebin.com/raw/EJskzezp'))()
-         end
-         })
-
 Tabs.Misc:AddButton({
         Title = "Time Reverse",
-        Description = "Reverses you in time",
+        Description = "Reverses your character in time",
         Callback = function()
          loadstring(game:HttpGet("https://raw.githubusercontent.com/0Ben1/fe./main/L"))()
          end
