@@ -53,7 +53,7 @@ end
         Title = "Dex",
         Description = "View the game explorer",
         Callback = function()
-         loadstring(game:HttpGet("https://raw.githubusercontent.com/sauce-boss01/dex-for-loadstring/main/.gitignore"))()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/sauce-boss01/dex-for-loadstring/main/.lua"))()
 end
     })
     
@@ -85,7 +85,7 @@ end
    })
 
                   Tabs.Anim:AddButton({
-        Title = "Energyze remake",
+        Title = "Energize remake",
         Description = "Some animations",
         Callback = function()
          loadstring(game:HttpGet('https://pastebin.com/raw/LcUcK8z0'))()
