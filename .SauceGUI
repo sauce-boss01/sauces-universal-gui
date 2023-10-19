@@ -342,7 +342,8 @@ Tabs.Games:AddButton({
     Callback = function()
         if game.PlaceId == 13772394625 then
            
- loadstring(game:HttpGet("https://paste.gg/p/anonymous/42c468c6f0d94d6a86fc90caf7f0e897/files/9d3a059ff4064dc0b9efe621c774d175/raw"))()
+ loadstring(game:HttpGet("https://raw.githubusercontent.com/3345-c-a-t-s-u-s/-beta-/main/AutoParry.lua"))()
+
            
         else
             Window:Dialog({
