@@ -588,8 +588,16 @@ Tabs.Games:AddButton({
     Callback = function()
         if game.PlaceId == 12716101148 then
             
+   Fluent:Notify({
+        Title = "Notification",
+        Content = "Loading...",
+        SubContent = "loading services",
+        Duration = 9
+    })
+wait(10)
+
 loadstring(game:HttpGet("https://raw.githubusercontent.com/sauce-boss01/Poser-script/main/source.lua"))()
- 
+
         else
             Window:Dialog({
                 Title = "Not in the game",
