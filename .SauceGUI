@@ -580,6 +580,43 @@ game:GetService("TeleportService"):Teleport(destinationPlaceId)
 })
 
 
+--------------Poser!
+
+Tabs.Games:AddButton({
+    Title = "Poser!",
+    Description = "Script for poser",
+    Callback = function()
+        if game.PlaceId == 12716101148 then
+            
+loadstring(game:HttpGet("https://raw.githubusercontent.com/sauce-boss01/Poser-script/main/source.lua"))()
+ 
+        else
+            Window:Dialog({
+                Title = "Not in the game",
+                Content = "Go to the game, dumbass!",
+                Buttons = {
+                    {
+                        Title = "Join Poser!",
+                        Callback = function()
+                            local destinationPlaceId = 12716101148
+
+game:GetService("TeleportService"):Teleport(destinationPlaceId)
+
+                        end
+                    },
+                    {
+                        Title = "Cancel",
+                        Callback = function()
+                            print("Teleport Canceled")
+                        end
+                    }
+                }
+            })
+        end
+    end
+})
+
+
 ----------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------
                                            --SETTINGS--
