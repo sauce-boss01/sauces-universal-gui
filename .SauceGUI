@@ -835,13 +835,6 @@ tool.Parent = game.Players.LocalPlayer.Backpack
 end
    })
 
-              Tabs.User:AddButton({
-        Title = "Player collision",
-        Description = "enable collision with other players (can't fling since it's not serversided)",
-        Callback = function()
-         loadstring(game:HttpGet("https://raw.githubusercontent.com/rouxhaver/scripts/main/Local%20Full%20Player%20Collision.Lua", true))()
-         end
-         })
 ----------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------
 Fluent:Notify({
