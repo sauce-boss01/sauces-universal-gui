@@ -78,7 +78,7 @@ end
    })
 
                Tabs.Hubs:AddButton({
-        Title = "B4RKS Bypasser",
+        Title = "V3rge's Bypasser",
         Description = "Best bypasser script",
         Callback = function()
          loadstring(game:HttpGet("https://raw.githubusercontent.com/BakaPraselol/MRCBV4LSB4KRS/main/Loader"))()
