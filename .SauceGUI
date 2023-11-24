@@ -6,7 +6,7 @@ local player = game.Players.LocalPlayer
 local character = player.Character
 local humanoid = character and character:FindFirstChild("Humanoid")
 -----------------------------------------------------------------random funi things--------------------------------------------------------------------------------------------------------------------------------------------------------------
-print (tostring(game:HttpGet("https://pastebin.com/raw/DKtbHiZh", true))) --print script made by
+print (tostring(game:HttpGet("https://github.com/sauce-boss01/PrintCredit/blob/main/print", true))) --print script made by
 game:GetService("CoreGui").RobloxGui.SettingsClippingShield.SettingsShield.MenuContainer.BottomButtonFrame.ResetCharacterButtonButton.ResetCharacterButtonTextLabel.Text = "kill yourself" --change reset charcter button to kill yourself lol
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 local Window = Fluent:CreateWindow({
