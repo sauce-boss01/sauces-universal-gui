@@ -36,11 +36,7 @@ do
  
     
     end
-    
-    Tabs.Main:AddParagraph({
-        Title = "Recommended to use Electron or Fluxus",
-        Content = "Only tested in Electron and Fluxus, Other executors may not work well"
-    })
+
 
         Tabs.Main:AddButton({
         Title = "Infinite Yield",
@@ -652,7 +648,7 @@ SaveManager:LoadAutoloadConfig()
                                            --CHARACTER--
 
  Tabs.User:AddParagraph({
-        Title = "Waring",
+        Title = "Warning",
         Content = "If theres nothing here it means that your character isnt loaded in, please re-execute when it is."
     })
 
