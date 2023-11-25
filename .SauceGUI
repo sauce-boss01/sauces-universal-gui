@@ -592,7 +592,7 @@ Tabs.Games:AddButton({
     })
 wait(10)
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/sauce-boss01/Poser-script/main/source.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/sauce-boss01/poser-gui/main/source.lua"))()
 
         else
             Window:Dialog({
