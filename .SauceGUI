@@ -50,7 +50,7 @@ end
         Title = "Dex",
         Description = "View the game explorer",
         Callback = function()
-         loadstring(game:HttpGet("https://raw.githubusercontent.com/sauce-boss01/dex-for-loadstring/main/.lua"))()
+         loadstring(game:HttpGet("https://raw.githubusercontent.com/sauce-boss01/dex-for-loadstring/main/for%20phone"))()
 end
     })
     
