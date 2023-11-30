@@ -1,3 +1,5 @@
+local vKey = "BlahBlahGibberish7"
+
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
@@ -78,6 +80,33 @@ end
         Description = "Best bypasser script",
         Callback = function()
          loadstring(game:HttpGet("https://raw.githubusercontent.com/BakaPraselol/MRCBV4LSB4KRS/main/Loader"))()
+
+wait(0.5)
+Fluent:Notify({
+        Title = "Bypassing key",
+        Content = "Loading...",
+        SubContent = "",
+        Duration = 2
+})
+
+wait(1)
+
+local notifSound = Instance.new("Sound",workspace)
+notifSound.PlaybackSpeed = 1
+notifSound.Volume = 3
+notifSound.SoundId = "rbxassetid://261072074"
+notifSound.PlayOnRemove = true
+notifSound:Destroy()
+
+  Fluent:Notify({
+        Title = "Bypass",
+        Content = "Bypassed Key, Key copied.",
+        SubContent = "Paste it into the text box",
+        Duration = 12
+    })
+
+setclipboard(vKey)
+
 end
    })
 
