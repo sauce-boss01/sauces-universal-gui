@@ -254,7 +254,13 @@ Tabs.Misc:AddButton({
          end
          })
 
-
+                 Tabs.Misc:AddButton({
+        Title = "Fling All",
+        Description = "make the server go flying",
+        Callback = function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/zqyDSUWX"))()
+         end
+         }) 
 
 
 
@@ -620,7 +626,71 @@ game:GetService("TeleportService"):Teleport(destinationPlaceId)
         end
     end
 })
+-------------------------------------------Prison Life Crasher
+Tabs.Games:AddButton({
+    Title = "Prison Life Crasher",
+    Description = "Crasher script for prison life",
+    Callback = function()
+        if game.PlaceId == 155615604 then
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/sauce-boss01/prison-life-crasher/main/crasher", true))()
+        else
+            Window:Dialog({
+                Title = "Not in the game",
+                Content = "Go to the game, dumbass!",
+                Buttons = {
+                    {
+                        Title = "Join Prison Life",
+                        Callback = function()
+                            local destinationPlaceId = 155615604
 
+game:GetService("TeleportService"):Teleport(destinationPlaceId)
+
+                        end
+                    },
+                    {
+                        Title = "Cancel",
+                        Callback = function()
+                            print("Teleport Canceled")
+                        end
+                    }
+                }
+            })
+        end
+    end
+})
+
+-------------------------------------------CAC
+Tabs.Games:AddButton({
+    Title = "Catalog Avatar Creator",
+    Description = "Scripts for CAC",
+    Callback = function()
+        if game.PlaceId == 7041939546 then
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/sauce-boss01/cac/main/cac"))() 
+        else
+            Window:Dialog({
+                Title = "Not in the game",
+                Content = "Go to the game, dumbass!",
+                Buttons = {
+                    {
+                        Title = "Join Catalog Avatar Creator",
+                        Callback = function()
+                            local destinationPlaceId = 7041939546
+
+game:GetService("TeleportService"):Teleport(destinationPlaceId)
+
+                        end
+                    },
+                    {
+                        Title = "Cancel",
+                        Callback = function()
+                            print("Teleport Canceled")
+                        end
+                    }
+                }
+            })
+        end
+    end
+})
 
 ----------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------
